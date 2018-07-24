@@ -73,5 +73,5 @@ def date_schedule(start_date, period_in_months, tenor_in_months):
         raise ValueError("Tenor (in months) is not a multiple of the period (in months).")
     date_list = [add_months_mod_foll(start_date, months_ahead) for months_ahead
                  in range(0, tenor_in_months + 1, period_in_months)]
-    return zip(date_list[:-1], date_list[1:])
+    return list(zip(date_list[:-1], date_list[1:]))
 
